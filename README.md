@@ -25,7 +25,7 @@ Oracle Linux 7+
 ## Installation
 
 ```
-bash -c "$(curl -L https://github.com/jiuqi9997/smokeping/raw/main/main.sh)"
+bash -c "$(curl -L https://github.com/Driaan/smokeping/raw/main/main.sh)"
 ```
 
 If `command not found` appears, please execute `apt-get install curl -y` or
