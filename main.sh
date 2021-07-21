@@ -112,7 +112,7 @@ EOF
 	systemctl enable nginx
 	systemctl start nginx
 	ps -ef | sed '/grep/d' | grep -q nginx || error=1
-	[[ $error ]] && echo "Nginx 安装失败" && exit 1
+	[[ $error ]] && echo "Nginx installation failed" && exit 1
 }
 
 get_info() {
@@ -127,11 +127,11 @@ get_info() {
 	else
 		exit 1
 	fi
-	ss -tnlp | grep -q ":9007 " && echo "需要9007端口，现已被占用" && exit 1
-	ss -tnlp | grep -q ":9008 " && echo "需要9008端口，现已被占用" && exit 1
-	read -rp "输入服务器名称（如 香港）:" name
-	read -rp "输入服务器代号（如 HK）:" code
-	read -rp "输入通信密钥（不限长度）:" sec
+	ss -tnlp | grep -q ":9007 " && echo "Requires port 9008, which is now occupied" && exit 1
+	ss -tnlp | grep -q ":9008 " && echo "Requires port 9008, which is now occupied" && exit 1
+	read -rp "Enter the server name (e.g. Hong Kong):" name
+	read -rp "Enter the server code (e.g. HK):" code
+	read -rp "Enter the communication key (unlimited length) :" sec
 }
 
 compile_smokeping() {
@@ -153,7 +153,7 @@ compile_smokeping() {
 configure() {
 	origin="https://github.com/jiuqi9997/smokeping/raw/main"
 	ip=$(curl -sL https://api64.ipify.org -4) || error=1
-	[[ $error ]] && echo "获取本机 IP 地址失败" && exit 1
+	[[ $error ]] && echo "Failed to obtain the local IP address" && exit 1
 	wget $origin/tcpping-sp -O /usr/bin/tcpping-sp && chmod +x /usr/bin/tcpping-sp
 	wget $origin/nginx.conf -O $nginx_conf_dir/smokeping.conf && nginx -s reload
 	wget $origin/config -O /usr/local/smokeping/etc/config
@@ -170,7 +170,7 @@ configure() {
 	mkdir -p data var cache ../cache
 	mv smokeping.fcgi.dist smokeping.fcgi
 	../bin/smokeping --debug || error=1
-	[[ $error ]] && echo "测试运行失败！" && exit 1
+	[[ $error ]] && echo "The test failed!" && exit 1
 }
 
 
@@ -187,8 +187,8 @@ systemctl status smokeping | grep -q 'TCPPing' || error=1
 
 rm -rf /tmp/smokeping
 
-echo "安装完成，页面网址：http://$ip:9008/"
+echo "Installation is complete, page URL: http://$ip:9008/"
 echo ""
-echo "注意："
-echo "如有必要请在防火墙放行9008端口"
-echo "请等待一会，监控数据不会立即更新"
+echo "Note:"
+echo "If necessary, please allow port 9008 in the firewall"
+echo "Please wait for a while, the monitoring data will not be updated immediately"
