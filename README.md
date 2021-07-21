@@ -1,10 +1,19 @@
-# SmokePing 一键脚本
+# SmokePing one-click script
 
-[SmokePing](https://oss.oetiker.ch/smokeping) 是由 RRDtool 的作者 Tobi Oetiker 开发的一款监控网络状态和稳定性的开源软件。使用脚本安装后，SmokePing 会定时向目标发送 TCP 数据包，并对返回值进行测量和记录，通过 RRDtool 制图程序图形化地展示在各个时段内网络的延迟、抖动和丢包率，帮助我们更清楚、更直观地了解服务器的网络状况。
+[SmokePing](https://oss.oetiker.ch/smokeping) is an open source software
+developed by RRDtool author Tobi Oetiker to monitor network status and
+stability. After the script is installed, SmokePing will periodically send TCP
+packets to the target, and measure and record the return value. The RRDtool
+drawing program graphically displays the network delay, jitter and packet loss
+rate in each period of time, helping us to be more clear , A more intuitive
+understanding of the server's network status.
 
-本脚本会使 SmokePing 运行在 Nginx 上，为了与可能存在的其他 Web 服务共存，需要9007和9008端口，请确保它们没有被占用。
+This script will make SmokePing run on Nginx. In order to coexist with other web
+services that may exist, ports 9007 and 9008 are required. Please make sure that
+they are not occupied.
 
-目前支持的 Linux 发行版：
+Currently supported Linux distributions:
+
 ```
 Debian 9+
 Ubuntu 18+
@@ -13,14 +22,19 @@ Amazon Linux 2
 Oracle Linux 7+
 ```
 
-## 安装
+## Installation
 
 ```
 bash -c "$(curl -L https://github.com/jiuqi9997/smokeping/raw/main/main.sh)"
 ```
 
-如果出现 `command not found` 请执行 `apt-get install curl -y` 或 `yum install curl -y`。
+If `command not found` appears, please execute `apt-get install curl -y` or
+`yum install curl -y`.
 
-## 配置
-脚本自动为 SmokePing 进行配置，可以自行按需修改。
-SmokePing 主配置文件（包括目标节点）为 `/usr/local/smokeping/etc/config`，此文件的结构及其修改请查阅相关教程，附上[示例](https://oss.oetiker.ch/smokeping/doc/smokeping_examples.en.html)。
+## Configuration
+
+The script automatically configures SmokePing and can be modified as needed. The
+main SmokePing configuration file (including the target node) is
+`/usr/local/smokeping/etc/config`. For the structure and modification of this
+file, please refer to the relevant tutorial, and attach
+[example](https://oss.oetiker.ch /smokeping/doc/smokeping_examples.en.html).

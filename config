@@ -44,7 +44,7 @@ AVERAGE  0.5 144   720
 template = /usr/local/smokeping/etc/basepage.html.dist
 charset = utf-8
 
-+ overview 
++ overview
 
 width = 600
 height = 200
@@ -96,57 +96,57 @@ remark = Welcome to this SmokePing website. <br />
 
 + mainland
 
-menu = 大陆方向
-title = 大陆方向
+menu = Mainland direction
+title = Mainland direction
 nomasterpoll = yes
 host = /mainland/ct-gz~SLAVE_CODE /mainland/ct-sh~SLAVE_CODE /mainland/cu-gz~SLAVE_CODE /mainland/cu-sh~SLAVE_CODE /mainland/cm-gz~SLAVE_CODE /mainland/cm-sh~SLAVE_CODE
 
 ++ ct-gz
 
-menu = 广州电信
-title = 广州电信
+menu = Guangzhou Telecom
+title = Guangzhou Telecom
 slaves = SLAVE_CODE
 host = 14.215.116.1
 
 ++ ct-sh
 
-menu = 上海电信
-title = 上海电信
+menu = Shanghai Telecom
+title = Shanghai Telecom
 slaves = SLAVE_CODE
 host = 180.153.28.5
 
 ++ cu-gz
 
-menu = 广州联通
-title = 广州联通
+menu = Guangzhou Unicom
+title = Guangzhou Unicom
 slaves = SLAVE_CODE
 host = 157.255.70.5
 
 ++ cu-sh
 
-menu = 上海联通
-title = 上海联通
+menu = Shanghai Unicom
+title = Shanghai Unicom
 slaves = SLAVE_CODE
 host = 211.95.52.116
 
 ++ cm-gz
 
-menu = 广州移动
-title = 广州移动
+menu = Guangzhou Mobile
+title = Guangzhou Mobile
 slaves = SLAVE_CODE
 host = 120.232.176.254
 
 ++ cm-sh
 
-menu = 上海移动
-title = 上海移动
+menu = Shanghai Mobile
+title = Shanghai Mobile
 slaves = SLAVE_CODE
 host = 221.183.55.22
 
 + global
 
-menu = 国际方向
-title = 国际方向
+menu = International direction
+title = International direction
 nomasterpoll = yes
 host = /global/cf~SLAVE_CODE /global/hk-pccw~SLAVE_CODE /global/sg-vu~SLAVE_CODE
 
@@ -159,14 +159,14 @@ host = 104.16.124.96
 
 ++ hk-pccw
 
-menu = 香港 PCCW
-title = 香港 PCCW
+menu = Hong Kong PCCW
+title = Hong Kong PCCW
 slaves = SLAVE_CODE
 host = 63.216.151.43
 
 ++ sg-vu
 
-menu = 新加坡 Vultr
-title = 新加坡 Vultr
+menu = Singapore Vultr
+title = Singapore Vultr
 slaves = SLAVE_CODE
 host = 45.32.100.168
